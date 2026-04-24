@@ -28,6 +28,42 @@ def Knapsack( W, val, wt, n):
         
 ## Greedy Approach
 
+## Proof
+Proof. We are proving by induction that for all n and C, K(n, C) will return the maximum value that can be achievable using the first n items and the capacity C.
+
+Theorem:
+For all integers $n\geq 0$, and capacity C where $C \geq 0$, K(n, C) will return the maximum value achievable using subset A, where $A \subseteq \{1, ..., n\}$ will hold a set of items such that the total weight is at most C.
+
+Base case: 
+if n = 0, then K(0, C) = 0, for all $n\geq 0$
+if C = 0, then K(n, 0) = 0, for all $n\geq 0$
+
+Inductive Hypothesis: K(n – 1, C`) is true for all C`$\leq C$
+
+Inductive Step:
+Case 1: item n is not included
+This means $A \subseteq \{1, ..., n-1\}$
+We assume A is an optimal solution
+$A_{weight} <= C$
+Therefore, A is a valid solution to the subproblem of K(n-1, C)
+$A_{value} <= K(n-1, C)$
+
+Case 2:  item n is included
+$A=A'∪ \{n\} $ where $A'⊆ \{1, …, n−1\} $
+We assume A is an optimal solution 
+$Aweight <= C$
+$A_{weight} = A'_{weight} + w_n$
+Therefore, $A'_{weight} <= C -w_n $
+Thus, A` is a valid solution to the subproblem K(n-1, C - wn)
+$A'_{value} <= K(n-1, C - w_n)$
+$A_{value} <= K(n-1, C - w_n) + v_n$
+
+$A_{value} <= K(n-1, C)$
+$A_{value} <= K(n-1, C - w_n) + v_n$
+$A_{value} <= max(K(n-1, C), K(n-1, C - w_n) + v_n))$
+
+Conclusion: Thus, by induction we have that the recurrence of K(n, C) = max(K(n-1, C), K(n-1, C - wn) + vn)) is correct in computing the max value for all n and C
+
 ## Running the Project
 
 
