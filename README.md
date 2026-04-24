@@ -5,7 +5,24 @@ This project is on the correctness proof for a Dynamic Porgramming Algorithm sol
 Diana Manzanes
 
 ## Dynamic Programming Approach
-
+ def Knapsack( W, val, wt, n):
+	 > \# create the table by initializing by 0
+	 \indent for i=0 to n:
+         \indent \indent \# base case: when item is 0, then value is 0
+		 \indent \indent A[i][0] = 0 	
+	 \indent for j=0 to n:
+         \indent \indent \# base case: when capacity is 0, then value is 0
+		 \indent \indent A[0][j] = 0
+    
+	 \indent for i to n:
+		 \indent \indent for j = 1 to m:
+			 \indent \indent \indent if w[i] <= j:
+                 \indent \indent \indent \indent \# take new item if max
+				 \indent \indent \indent \indent A[i][j] = max(A[i][j], v[i] + A[i-1, j – w[i]])	
+			 \indent \indent \indent else:
+                 \indent \indent \indent \indent \# don't take new item
+				 \indent \indent \indent \indent A[i][j] = A[i - 1][j]	
+        
 ## Greedy Approach
 
 ## Running the Project
