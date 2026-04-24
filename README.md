@@ -6,8 +6,8 @@ Diana Manzanes
 
 ## Dynamic Programming Approach
  ` ` `
- 	def Knapsack( W, val, wt, n):
-	 # create the table by initializing by 0
+ 	\def Knapsack( W, val, wt, n):
+	 \# create the table by initializing by 0
 	 \indent for i=0 to n:
          \indent \indent \# base case: when item is 0, then value is 0
 		 \indent \indent A[i][0] = 0 	
