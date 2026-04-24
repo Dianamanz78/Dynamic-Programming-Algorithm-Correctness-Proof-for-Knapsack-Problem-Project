@@ -21,7 +21,7 @@ Diana Manzanes
 				 \indent \indent \indent \indent A[i][j] = max(A[i][j], v[i] + A[i-1, j – w[i]])	
 			 \indent \indent \indent else:
                  \indent \indent \indent \indent \# don't take new item
-				 \indent \indent \indent \indent A[i][j] = A[i - 1][j]	
+				 \indent \indent \indent \indent A[i][j] = A[i - 1][j]	 ` ` `
         
 ## Greedy Approach
 
