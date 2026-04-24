@@ -18,12 +18,12 @@ def Knapsack( W, val, wt, n):
     
 	 for i to n:
 		 for j = 1 to m:
-			 \indent \indent \indent if w[i] <= j:
-                 \indent \indent \indent \indent \# take new item if max
-				 \indent \indent \indent \indent A[i][j] = max(A[i][j], v[i] + A[i-1, j – w[i]])	
-			 \indent \indent \indent else:
-                 \indent \indent \indent \indent \# don't take new item
-				 \indent \indent \indent \indent A[i][j] = A[i - 1][j]	
+			 if w[i] <= j:
+                 # take new item if max
+				 A[i][j] = max(A[i][j], v[i] + A[i-1, j – w[i]])	
+			 else:
+                 # don't take new item
+				 A[i][j] = A[i - 1][j]	
 ```
         
 ## Greedy Approach
