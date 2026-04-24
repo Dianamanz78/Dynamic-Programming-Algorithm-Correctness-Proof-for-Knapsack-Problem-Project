@@ -40,16 +40,21 @@ if n = 0, then K(0, C) = 0, for all $n\geq 0$
 if C = 0, then K(n, 0) = 0, for all $n\geq 0$
 ```
 
-Inductive Hypothesis: K(n – 1, C`) is true for all C`$\leq C$
+Inductive Hypothesis:
+```
+K(n – 1, C`) is true for all C`$\leq C$
+```
 
 Inductive Step:
+```
 Case 1: item n is not included
 This means $A \subseteq \{1, ..., n-1\}$
 We assume A is an optimal solution
 $A_{weight} <= C$
 Therefore, A is a valid solution to the subproblem of K(n-1, C)
 $A_{value} <= K(n-1, C)$
-
+```
+```
 Case 2:  item n is included
 $A=A'∪ \{n\} $ where $A'⊆ \{1, …, n−1\} $
 We assume A is an optimal solution 
@@ -63,6 +68,7 @@ $A_{value} <= K(n-1, C - w_n) + v_n$
 $A_{value} <= K(n-1, C)$
 $A_{value} <= K(n-1, C - w_n) + v_n$
 $A_{value} <= max(K(n-1, C), K(n-1, C - w_n) + v_n))$
+```
 
 Conclusion: Thus, by induction we have that the recurrence of K(n, C) = max(K(n-1, C), K(n-1, C - wn) + vn)) is correct in computing the max value for all n and C
 
