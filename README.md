@@ -35,8 +35,10 @@ Theorem:
 For all integers $n\geq 0$, and capacity C where $C \geq 0$, K(n, C) will return the maximum value achievable using subset A, where $A \subseteq \{1, ..., n\}$ will hold a set of items such that the total weight is at most C.
 
 Base case: 
+```
 if n = 0, then K(0, C) = 0, for all $n\geq 0$
 if C = 0, then K(n, 0) = 0, for all $n\geq 0$
+```
 
 Inductive Hypothesis: K(n – 1, C`) is true for all C`$\leq C$
 
