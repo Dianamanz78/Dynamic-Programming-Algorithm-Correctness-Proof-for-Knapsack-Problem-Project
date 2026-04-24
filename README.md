@@ -4,5 +4,10 @@ This project is on the correctness proof for a Dynamic Porgramming Algorithm sol
 ## Author
 Diana Manzanes
 
-## Introduction
+## Dynamic Programming Approach
+
+## Greedy Approach
+
+## Running the Project
+
 
