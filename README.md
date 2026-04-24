@@ -1,5 +1,8 @@
 # Dynamic-Programming-Algorithm-Correctness-Proof-for-Knapsack-Problem-Project
-This project will include an implementation of both the greedy approach and dynamic programming algorithm approach for the I/O knapsack problem including an analyzation of these two algorithms. It will also include the correctness proof of the DP algorithm.
+This project is on the correctness proof for a Dynamic Porgramming Algorithm solution for the Knapsack Problem. It will include an implementation of both the Greedy approach and Dynamic Programming approach for the I/O knapsack problem including an analyzation of these two algorithms using multiple test cases and why the DP is the better approach. It will also include the correctness proof of the DP algorithm after establishing that DP is the only option. 
 
 ## Author
 Diana Manzanes
+
+## Introduction
+
