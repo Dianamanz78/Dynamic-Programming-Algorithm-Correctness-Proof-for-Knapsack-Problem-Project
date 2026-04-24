@@ -5,8 +5,9 @@ This project is on the correctness proof for a Dynamic Porgramming Algorithm sol
 Diana Manzanes
 
 ## Dynamic Programming Approach
- ` ` `
- 	\def Knapsack( W, val, wt, n):
+
+```
+\def Knapsack( W, val, wt, n):
 	 \# create the table by initializing by 0
 	 \indent for i=0 to n:
          \indent \indent \# base case: when item is 0, then value is 0
@@ -23,7 +24,7 @@ Diana Manzanes
 			 \indent \indent \indent else:
                  \indent \indent \indent \indent \# don't take new item
 				 \indent \indent \indent \indent A[i][j] = A[i - 1][j]	
-` ` `
+```
         
 ## Greedy Approach
 
