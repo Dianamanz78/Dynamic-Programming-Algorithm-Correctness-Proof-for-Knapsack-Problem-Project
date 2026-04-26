@@ -28,6 +28,10 @@ def Knapsack( W, val, wt, n):
         
 ## Greedy Approach
 
+## Test Cases
+
+
+
 ## Proof
 Proof. We are proving by induction that for all n and C, K(n, C) will return the maximum value that can be achievable using the first n items and the capacity C.
 
