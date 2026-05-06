@@ -12,10 +12,11 @@ def greedyKnapsack(W, val, wt):
     itemsPicked = []
     
     for i in sorted_indices:
+        # if adding the item to the knapsack doesn't exceed capacity, then add
         if currWt + wt[i] <= W:
-            currWt = currWt + wt[i]
-            maxVal = maxVal + val[i]
-            itemsPicked.append(val[i])
+            currWt = currWt + wt[i]        # update current weight
+            maxVal = maxVal + val[i]       # update current value
+            itemsPicked.append(val[i])     # update list of chosen items
         else:
             continue
     
