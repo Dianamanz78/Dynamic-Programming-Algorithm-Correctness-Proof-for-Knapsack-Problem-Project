@@ -1,54 +1,50 @@
-def knapsack(W, val, wt, n, table):
-    # base case: no items or no capacity
-    if n == 0 or W == 0:
-        table[n][W] = 0
-        return 0
-    
-    # if subproblem has been done before
-    if table[n][W] != -1:
-        return table[n][W]
-    
-    # compute value if we pick the item
-    pick = 0
-    if wt[n-1] <= W:
-        pick = val[n-1] + knapsack(W - wt[n-1], val, wt, n-1, table)
-    
-    # compute value not picking the item
-    notPick = knapsack(W, val, wt, n-1, table)
-    
-    table[n][W] = max(pick, notPick)
-    return table[n][W]
-
 def getPickedItems(W, val, wt, table):
     n = len(val)
     items = []
     while n > 0 and W > 0:
-        if table[n][W] != table[n-1][W]:
+        if wt[n-1] > W:
+            n -= 1
+            continue
+
+        pick = val[n-1] + table[n-1][W - wt[n-1]]
+        notPick = table[n-1][W]
+
+        if pick >= notPick:
             items.append(val[n-1])
-            W = W - wt[n-1]
-        n = n -1 
+            W -= wt[n-1]
+
+        n -= 1
     return items
 
 def DP(W, val, wt):
+    # initialize table
     n = len(val)
+    # base case: no items or no capacity
+    table = [[0] * (W + 1) for _ in range(n + 1)]
     
-    #initialize table with -1 for memoization
-    table = [[-1] * (W + 1) for _ in range(n+1)]
-    
-    # compute max value
-    for i in range(n + 1):
+    # go through row by row
+    for i in range(1, n + 1):
         for w in range(W + 1):
-            knapsack(w, val, wt, i, table)
-    maxVal = table[n][W]
+            # check if adding the current item does not exceed capacity
+            if wt[i-1] <= w:
+                # compute value if we pick the item and not pick the item and choose the max
+                table[i][w] = max(
+                    val[i-1] + table[i-1][w - wt[i-1]],
+                    table[i-1][w]
+                )
+            # if item exceeds capacity, then use value of not picking the item
+            else:
+                table[i][w] = table[i-1][w]
     
-    # get list of items chosen
     itemsPicked = getPickedItems(W, val, wt, table)
+    return table[n][W], itemsPicked
     
-    return maxVal, itemsPicked
-    
-W = 4
-val = [1, 2, 3, 5]
-wt = [4, 5, 1, 2]
+W = 7
+val = [16, 19, 23, 28]
+wt  = [2, 3, 4, 5]
+
+
+
 maxVal, itemsPicked = DP(W, val, wt)
 print("max value: ", maxVal)
 print("value of items picked: ", itemsPicked)
