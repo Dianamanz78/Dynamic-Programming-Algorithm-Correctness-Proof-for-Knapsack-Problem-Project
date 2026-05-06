@@ -7,8 +7,6 @@ Diana Manzanes
 ## Test Cases
 <img width="630" height="320" alt="image" src="https://github.com/user-attachments/assets/8d1e6d52-77c4-4de3-8a8c-e76ee85b08aa" />
 
-
-
 ## Running the Project
 
-
+To run the project, you will need to use Visual Studio Code or equivalent to execute the programs. All of the files included, should be able to be executed independently from one another. 
